@@ -2,10 +2,23 @@ import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/registration_screen.dart';
 import 'screens/welcome_screen.dart';
+import 'screens/map_screen.dart';
 import 'screens/main_dashboard.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wipap/components/app_state.dart';
 
-void main() => runApp(MyApp());
+
+void main(){
+  
+    WidgetsFlutterBinding.ensureInitialized();
+    
+    runApp(
+      MultiProvider(providers: [ChangeNotifierProvider.value(value: AppState(),)],
+        child: MyApp()),
+      );
+  }
+
 
 
 class MyApp extends StatefulWidget {
@@ -25,32 +38,24 @@ class _MyAppState extends State<MyApp> {
   void _getLocalStorage() async{
     SharedPreferences localStorage = await SharedPreferences.getInstance();
 
-    String token = localStorage.getString('token');
-
-    print(token);
-
-    if(localStorage.containsKey('token'))
-    {
-      setState(() {
-           isSignedIn = true;
+       setState(() {
+          token = localStorage.getString('token');
       });
-    }else{
-      setState(() {
-           isSignedIn = false;
-      });
-    }
+
+ 
 
   }
 
-  bool isSignedIn = false;
+  String token;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: /* isSignedIn ? MenuDashboardPage.id : */ WelcomeScreen.id,
+        initialRoute: /* isSignedIn ? MenuDashboardPage.id : */ MapsPage.id,//WelcomeScreen.id,
         routes: {
           WelcomeScreen.id: (context) => WelcomeScreen(),
+          MapsPage.id: (context) => MapsPage(),
           LoginScreen.id: (context) => LoginScreen(),
           RegistrationScreen.id: (context) => RegistrationScreen(),
          /*  MenuDashboardPage.id: (context) => MenuDashboardPage(), */

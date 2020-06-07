@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "285355542922",
+    "firebase_url": "https://wipapp-8924e.firebaseio.com",
+    "project_id": "wipapp-8924e",
+    "storage_bucket": "wipapp-8924e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285355542922:android:842d4a800fda30f8e16073",
+        "android_client_info": {
+          "package_name": "com.hagios.wipap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285355542922-q7gfpngs1k7ku1mveuup3p4h2jufa47n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hagios.wipap",
+            "certificate_hash": "265e65e2faa6a4f8ecb6efcb52512cfebc502a54"
+          }
+        },
+        {
+          "client_id": "285355542922-o400p1oi5q38dh5gl20jk5hmue2bike3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQzf0Xd1wdkNquMuozDiBx5BYvh_Ozfl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285355542922-o400p1oi5q38dh5gl20jk5hmue2bike3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
